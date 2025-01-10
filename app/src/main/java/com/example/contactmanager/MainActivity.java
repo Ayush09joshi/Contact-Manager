@@ -1,27 +1,31 @@
 package com.example.contactmanager;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 
-import java.util.ArrayList;
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity {
-
-    public static ArrayList<Contact> contactList = new ArrayList<>();  // List of contacts
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Load the ContactListFragment initially
+        // Load the ShowContactsFragment as the default fragment if not created preciously.
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, new ContactListFragment(), ContactListFragment.class.getSimpleName())
-                    .commit();
+            loadFragment(new com.example.contactmanager.ContactsView());
         }
+    }
+    // To switch between fragments dynamically, providing the ability to navigate between different screens.
+    public void loadFragment(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit();
     }
 }
