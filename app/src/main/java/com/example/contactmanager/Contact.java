@@ -1,16 +1,18 @@
 package com.example.contactmanager;
 
-public class Contact {
-    private String name;
-    private String phoneNumber;
+import androidx.appcompat.app.AppCompatActivity;
 
-    // Constructor
-    public Contact(String name, String phoneNumber) {
+public class Contact extends AppCompatActivity {
+    private final String name;
+    private final String phoneNumber;
+    private final long contactId;
+
+    public Contact(long contactId, String name, String phoneNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
+        this.contactId = contactId;
     }
 
-    // Getters
     public String getName() {
         return name;
     }
@@ -19,12 +21,7 @@ public class Contact {
         return phoneNumber;
     }
 
-    // Setters
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public long getContactId() {
+        return contactId;
     }
 }

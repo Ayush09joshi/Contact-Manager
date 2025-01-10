@@ -1,5 +1,12 @@
 <resources>
-    <string name="app_name">Contact Manager</string>
-    <string name="contact_photo">Contact Photo</string>
-
+    <string name="app_name">ContactsApp</string>
+    <string name="title">Contacts</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="save">Save</string>
+    <string name="contact_name_key">Contact Name</string>
+    <string name="contact_id_key">contactId</string>
+    <string name="contact_number_key">contactNumber</string>
+    <string name="request_permission">Request Permission</string>
+    <string name="delete_contact">Delete Contact</string>
 </resources>
